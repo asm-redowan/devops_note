@@ -41,6 +41,6 @@ EXPOSE 3306
 CMD ["mysqld"]
 ```
 
-`#RRGGBB`docker build -t dbserver . \n
-docker run -p 3306:3306 -dit --name mysql --env MYSQL_USER=test --env MYSQL_PASSWORD=test@123 --env MYSQL_ROOT_PASSWORD=root@123 dbserver \n
-docker exec -it mysql /bin/bash
+`#docker build -t dbserver .`
+`#docker run -p 3306:3306 -dit --name mysql --env MYSQL_USER=test --env MYSQL_PASSWORD=test@123 --env MYSQL_ROOT_PASSWORD=root@123 dbserver`
+`#docker exec -it mysql /bin/bash`
