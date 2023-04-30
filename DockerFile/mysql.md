@@ -1,4 +1,6 @@
+```
 FROM ubuntu:latest
+```
 
 ## Install MySQL server and client
 ```
