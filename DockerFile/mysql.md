@@ -11,6 +11,13 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 ```
 
+### Set environment variables
+```
+ENV MYSQL_ROOT_PASSWORD=my-secret-pw \
+    MYSQL_USER=myuser \
+    MYSQL_PASSWORD=mypassword
+```
+
 ### Start MySQL server and create a new database and user
 ```
 RUN service mysql start && \
@@ -24,12 +31,6 @@ RUN service mysql start && \
 RUN chown mysql:mysql /var/run/mysqld/mysqld.sock && \
     chmod 660 /var/run/mysqld/mysqld.sock && \
     service mysql start
-```
-### Set environment variables
-```
-ENV MYSQL_ROOT_PASSWORD=my-secret-pw \
-    MYSQL_USER=myuser \
-    MYSQL_PASSWORD=mypassword
 ```
 
 ### Expose MySQL port
