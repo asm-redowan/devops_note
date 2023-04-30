@@ -1,11 +1,11 @@
 FROM ubuntu:latest
 
 # Install MySQL server and client
-'''
+```
 RUN apt-get update && \
     apt-get install -y mysql-server mysql-client && \
     rm -rf /var/lib/apt/lists/*
-'''
+```
 
 # Start MySQL server and create a new database and user
 RUN service mysql start && \
