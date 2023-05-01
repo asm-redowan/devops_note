@@ -41,8 +41,8 @@ CMD ["mysqld", "--user=mysql", "--console"]
 # Build:
 
 #### Build Docker image using Dockerfile
-*`#docker build -t dbserver .`*
+*`#docker build -t mysqlv1.0 --build-arg MYSQL_ROOT_PASSWORD=root@123 --build-arg MYSQL_USER=myuser --build-arg MYSQL_PASSWORD=mypassword .`*
 #### Create Container using docker image
-*`#docker run -p 3306:3306 -dit --name mysql --env MYSQL_USER=test --env MYSQL_PASSWORD=test@123 --env MYSQL_ROOT_PASSWORD=root@123 dbserver`*
+*`#docker run -p 3306:3306 -dit --name dbserver mysqlv1.0`*
 #### Access to docker container
-*`#docker exec -it mysql /bin/bash`*
+*`#docker exec -it dbserver /bin/bash`*
