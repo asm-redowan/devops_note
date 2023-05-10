@@ -54,3 +54,21 @@ CMD ["mysqld"]
 #ENTRYPOINT ["/tmp/mysql.sh"]
 #CMD ["mysqld","chown", "mysql:mysql", "/var/run/mysqld/mysqld.sock","chmod", "660", "/var/run/mysqld/mysqld.sock", "/tmp/mysql.sh"]
 ```
+# Build:
+
+#### Build Docker image using Dockerfile
+```
+docker build -t dbserver .
+```
+#### Create Container using docker image
+```
+docker run -p 3306:3306 -it --name mysql --env MYSQL_USER="test" --env MYSQL_PASSWORD="test@123" --env MYSQL_ROOT_PASSWORD="root@123" --privileged=true  dbserver
+```
+#### Access to docker container
+```
+docker exec -it mysql /bin/bash -c ./tmp/mysql.sh
+
+    then
+
+docker exec -it mysql /bin/bash
+```
